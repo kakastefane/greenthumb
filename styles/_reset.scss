@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%; // 1rem = 10px
+  overflow-x: hidden;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-size: 1.4rem;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+button {
+  border: none;
+  background: none;
+}
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+img {
+  display: block;
+}

@@ -1,0 +1,123 @@
+.hero {
+  position: relative;
+  background-color: $brand-green-light;
+  padding: 3.5rem 3.5rem 2.5rem;
+  height: 600px;
+  width: 100%;
+  overflow-x: hidden;
+
+  background-image: url("/images/hero/mobile/mobile-plantperson.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 270px 230px;
+  background-origin: content-box;
+
+  @media (min-width: $breakpoint-md) {
+    height: 500px;
+    padding: 5.5rem 3.5rem;
+    background-image: url("/images/hero/desktop/plantperson.png");
+    background-position: 70% 50%;
+    background-size: auto 415px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 410px;
+    background-image: url("/images/hero/mobile/mobile-leaves.png");
+    background-size: 100% 100%;
+    background-origin: content-box;
+    z-index: 0;
+
+    @media (min-width: $breakpoint-md) {
+      background-image: url("/images/hero/desktop/left-leaves.png");
+      background-repeat: no-repeat;
+      background-position: center right;
+      background-size: auto 100%;
+      width: 860px;
+      height: 100%;
+      left: -65%;
+    }
+    @media (min-width: $breakpoint-lg) {
+      left: -35%;
+    }
+    @media (min-width: $breakpoint-xl) {
+      left: -10%;
+    }
+    @media (min-width: $breakpoint-xxl) {
+      left: 0%;
+    }
+  }
+
+  &::after {
+    display: none;
+
+    @media (min-width: $breakpoint-md) {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -20%;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background-image: url("/images/hero/desktop/right-leaves.png");
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: auto 100%;
+      background-origin: content-box;
+    }
+    @media (min-width: $breakpoint-lg) {
+      right: -10%;
+    }
+    @media (min-width: $breakpoint-xl) {
+      right: 0%;
+    }
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  &__logo {
+    width: auto;
+    height: 2rem;
+    margin-bottom: 3.5rem;
+    @media (min-width: $breakpoint-md) {
+      height: 2.5rem;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    max-width: 400px;
+    font-size: 4rem;
+    font-weight: bold;
+    color: $text-white;
+    margin-bottom: 1.6rem;
+
+    @media (min-width: $breakpoint-sm) {
+      font-size: 5rem;
+    }
+    @media (min-width: $breakpoint-md) {
+      font-size: 7rem;
+    }
+  }
+
+  &__button {
+    @include flexContainer(row, center, center);
+    height: 40px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -4,14 +4,20 @@
     <title>Front End Test - Greenthumb</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./index.scss" />
+    <link rel="stylesheet" href="./styles/main.scss" />
   </head>
 
   <body>
-    <img src="images/icons/logo-white.svg" alt="Greenthumb" />
+    <section class="hero">
+      <div class="hero__content">
+        <img class="hero__logo" src="./images/icons/logo-white.svg" alt="Green Thumb">
+        <h1 class="hero__title">Find your next green friend</h1>
+        <button class="hero__button" data-js="goToSearchForm">
+          <img src="./images/icons/arrow-down.svg" alt="Go to Search Form">
+        </button>
+      </div>
+      <!-- .hero__content -->
+    </section>
+    <!-- .hero -->
   </body>
 </html>
