@@ -1,0 +1,147 @@
+.filter {
+  padding: 3.5rem;
+  background-color: $bg-color-light;
+
+  &__content {
+    @include flexContainer(column, unset, center);
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 5rem;
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
+
+  &__field {
+    @include flexContainer(column, unset, flex-start);
+    width: 100%;
+    max-width: 245px;
+
+    @media (min-width: $breakpoint-md) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 1.5rem;
+  }
+
+  &__label {
+    margin-bottom: 2.5rem;
+    line-height: 2.2rem;
+  }
+
+  &__input {
+    width: 100%;
+    max-width: 245px;
+    height: 4rem;
+    border: 1px solid $text-color-light;
+    color: $text-color-light;
+    background-color: $bg-color-light;
+    appearance: none;
+  }
+}
+
+.select-box {
+  position: relative;
+  display: block;
+  width: 100%;
+  color: $text-color-light;
+
+  &__current {
+    position: relative;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid $text-color-light;
+    cursor: pointer;
+    outline: none;
+  }
+  &__current:focus {
+    border-radius: 20px 20px 0 0;
+    border-bottom: none;
+  }
+  &__current:focus + .select-box__list {
+    opacity: 1;
+    animation-name: none;
+  }
+  &__current:focus + .select-box__list .select-box__option {
+    cursor: pointer;
+  }
+  &__current:focus .select-box__icon {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 20px;
+    transition: 0.2s ease;
+  }
+  &__value {
+    display: -webkit-box;
+    display: flex;
+  }
+  &__input {
+    display: none;
+  }
+  &__input:checked + .select-box__input-text {
+    display: block;
+  }
+  &__input-text {
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 10px 15px;
+    background-color: #fff;
+  }
+  &__list {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    border: 1px solid $text-color-light;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+    border-top: none;
+    list-style: none;
+    opacity: 0;
+    animation-name: HideList;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: step-start;
+  }
+  &__option {
+    display: block;
+    padding: 10px 15px;
+    background-color: #fff;
+  }
+  &__option:hover,
+  &__option:focus {
+    color: #fff;
+    background-color: $brand-green-light;
+  }
+}
+
+@-webkit-keyframes HideList {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes HideList {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0);
+  }
+}

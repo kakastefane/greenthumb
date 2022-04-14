@@ -10,14 +10,152 @@
   <body>
     <section class="hero">
       <div class="hero__content">
-        <img class="hero__logo" src="./images/icons/logo-white.svg" alt="Green Thumb">
+        <img
+          class="hero__logo"
+          src="./images/icons/logo-white.svg"
+          alt="Green Thumb"
+        />
         <h1 class="hero__title">Find your next green friend</h1>
         <button class="hero__button" data-js="goToSearchForm">
-          <img src="./images/icons/arrow-down.svg" alt="Go to Search Form">
+          <img src="./images/icons/arrow-down.svg" alt="Go to Search Form" />
         </button>
       </div>
       <!-- .hero__content -->
     </section>
     <!-- .hero -->
+
+    <section class="filter">
+      <div class="filter__content">
+        <div class="filter__field">
+          <img
+            class="filter__icon"
+            src="./images/illustrations/sun.png"
+            alt="Illustration of Sun"
+            width="75px"
+            height="75px"
+          />
+          <p class="filter__label">
+            <strong>1.</strong> Set the amount of <strong>sunlight</strong><br />your plant will get.
+          </p>
+          <div class="select-box">
+            <div class="select-box__current" tabindex="1">
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="sun-0" value="null" name="sun" checked="checked"/>
+                <p class="select-box__input-text">Select...</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="sun-1" value="no" name="sun" />
+                <p class="select-box__input-text">No sunlight</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="sun-2" value="low" name="sun" />
+                <p class="select-box__input-text">Low sunlight</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="sun-3" value="high" name="sun" />
+                <p class="select-box__input-text">High sunlight</p>
+              </div>
+              <img class="select-box__icon" src="/images/icons/arrow-dropdown.svg" alt="Arrow Icon" aria-hidden="true"/>
+            </div>
+            <ul class="select-box__list">
+              <li><label class="select-box__option" for="sun-1">No sunlight</label></li>
+              <li><label class="select-box__option" for="sun-2">Low sunlight</label></li>
+              <li><label class="select-box__option" for="sun-3">High sunlight</label></li>
+            </ul>
+          </div>
+          <!-- .select-box -->
+
+        </div>
+        <!-- .filter__field -->
+        <div class="filter__field">
+          <img
+            class="filter__icon"
+            src="./images/illustrations/wateringcan.png"
+            alt="Illustration of Watering Can"
+            width="103px"
+            height="75px"
+          />
+          <label class="filter__label" for="water">
+            <strong>2.</strong> How often do you want to<br /><strong>water</strong> your plant?
+          </label>
+          <div class="select-box">
+            <div class="select-box__current" tabindex="1">
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="water-0" value="null" name="water" checked="checked" />
+                <p class="select-box__input-text">Select...</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="water-1" value="rarely" name="water" />
+                <p class="select-box__input-text">Rarely</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="water-2" value="regularly" name="water" />
+                <p class="select-box__input-text">Regularly</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="water-3" value="daily" name="water" />
+                <p class="select-box__input-text">Daily</p>
+              </div>
+              <img class="select-box__icon" src="/images/icons/arrow-dropdown.svg" alt="Arrow Icon" />
+            </div>
+            <ul class="select-box__list">
+              <li><label class="select-box__option" for="water-1">Rarely</label></li>
+              <li><label class="select-box__option" for="water-2">Regularly</label></li>
+              <li><label class="select-box__option" for="water-3">Daily</label></li>
+            </ul>
+          </div>
+          <!-- .select-box -->
+        </div>
+        <!-- .filter__field -->
+        <div class="filter__field">
+          <img
+            class="filter__icon"
+            src="./images/illustrations/dog.png"
+            alt="Illustration of Dog"
+            width="75px"
+            height="62px"
+          />
+          <label class="filter__label" for="pets">
+            <strong>3.</strong> Do you have pets? Do<br />they <strong>chew</strong> plants?
+          </label>
+          <div class="select-box">
+            <div class="select-box__current" tabindex="1">
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="pets-0" value="null" name="pets" checked="checked" />
+                <p class="select-box__input-text">Select...</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="pets-1" value="false" name="pets" />
+                <p class="select-box__input-text">No/They don’t care</p>
+              </div>
+              <div class="select-box__value">
+                <input class="select-box__input" type="radio" id="pets-2" value="true" name="pets" />
+                <p class="select-box__input-text">Yes</p>
+              </div>
+              <img class="select-box__icon" src="/images/icons/arrow-dropdown.svg" alt="Arrow Icon" />
+            </div>
+            <ul class="select-box__list">
+              <li><label class="select-box__option" for="pets-1">No/They don’t care</label></li>
+              <li><label class="select-box__option" for="pets-2">Yes</label></li>
+            </ul>
+          </div>
+          <!-- .select-box -->
+        </div>
+        <!-- .filter__field -->
+      </div>
+      <!-- .filter__content -->
+    </section>
+    <!-- .filter -->
+
+    <section class="no-results">
+      <div class="no-results__content">
+        <h2 class="no-results__title">No results yet…</h2>
+        <p class="no-results__description">
+          Use the filters above to find the plant that best fits your environment :)
+        </p>
+      </div>
+      <!-- .no-results__content -->
+    </section>
+    <!-- .no-results -->
   </body>
 </html>
