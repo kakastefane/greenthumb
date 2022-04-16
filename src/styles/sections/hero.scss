@@ -114,6 +114,7 @@
   &__button {
     @include flexContainer(row, center, center);
     height: 40px;
+    cursor: pointer;
 
     img {
       width: 100%;

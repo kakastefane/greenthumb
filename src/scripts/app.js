@@ -46,12 +46,39 @@ window.getPlants = function getPlants() {
           resultSection.classList.remove("hidden");
           noResultSection.classList.add("hidden");
 
-          plants.map((plant) => {
+          plants.map((plant, index) => {
             let li = document.createElement("li");
+
+            li.classList.add("plants__card");
+            if (index === 0) {
+              li.classList.add("plants__card--big");
+            }
+
             li.innerHTML = `
-              <h3>${plant.name}</h3>
-              <img src="${plant.url}" alt="${plant.name}" />
-            `;
+              ${
+                plant.staff_favorite
+                  ? '<span class="plants__card-badge">✨ Staff favorite</span>'
+                  : ""
+              }
+              <img class="plants__card-image" src="${plant.url}" alt="">
+              <div class="plants__card-content">
+                <h3 class="plants__card-title">${plant.name}</h3>
+                <div class="plants__card-infos">
+                  <span class="plants__card-price">$${plant.price}</span>
+                  <span class="plants__card-icons">
+                    <img src="./images/icons/${
+                      plant.toxicity ? "toxic" : "pet"
+                    }.svg" alt="toxicity" />
+                    ${
+                      plant.sun &&
+                      `<img src="./images/icons/${plant.sun}-sun.svg" alt="sun" />`
+                    }
+                    <img src="./images/icons/${
+                      plant.water
+                    }-water.svg" alt="water" />
+                  </span>
+                </div>
+              </div>`;
             list.appendChild(li);
           });
           plantsWrapper.innerHTML = "";
