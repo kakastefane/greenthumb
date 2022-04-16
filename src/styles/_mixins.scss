@@ -1,4 +1,3 @@
-// flex container
 @mixin flexContainer($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;
