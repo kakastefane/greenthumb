@@ -1,0 +1,27 @@
+.loading {
+  @include flexContainer(row, center, center);
+  gap: 0.5rem;
+  position: fixed;
+  inset: 0;
+  background-color: transparentize($brand-green, 0.3);
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  color: $bg-color-light;
+  font-size: 1.6rem;
+
+  &__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    animation: spin 1.5s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

@@ -4,8 +4,8 @@
   "description": "Simple Parcel Sandbox",
   "main": "index.html",
   "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html",
+    "start": "parcel src/index.html --out-dir dist --open",
+    "build": "parcel build src/index.html",
     "deploy": "yarn build && surge ./dist"
   },
   "dependencies": {

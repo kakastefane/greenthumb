@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Front End Test - Greenthumb</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles/main.scss" />
+  </head>
+
+  <body>
+    <div id="loading" class="loading hidden">
+      <img class="loading__icon" src="./images/icons/loading.svg" alt="Loading...">
+      Loading...
+    </div>
+
+    <section class="hero">
+      <div class="hero__content">
+        <img
+          class="hero__logo"
+          src="./images/icons/logo-white.svg"
+          alt="Green Thumb"
+        />
+        <h1 class="hero__title">Find your next green friend</h1>
+        <button class="hero__button" onclick="scrollToElement('.filter')">
+          <img src="./images/icons/arrow-down.svg" alt="Go to Search Form" />
+        </button>
+      </div>
+      <!-- .hero__content -->
+    </section>
+    <!-- .hero -->
+
+    <section class="filter">
+      <div class="filter__content">
+        <div class="filter__field">
+          <img
+            class="filter__icon"
+            src="./images/illustrations/sun.png"
+            alt="Illustration of Sun"
+            width="75px"
+            height="75px"
+          />
+          <p class="filter__label">
+            <strong>1.</strong> Set the amount of <strong>sunlight</strong><br />your plant will get.
+          </p>
+          
+          <div class="select-box">
+            <input name="sun" type="hidden" id="selectedValueSun" value="null" />
+            <div
+              class="select-box__value"
+              id="displayValueSun"
+              onclick="toggleOptions('Sun')"
+            >
+              <span class="select-box__value-text" id="valueTextSun">Select...</span>
+              <span class="select-box__arrow" id="arrowControlSun"></span>
+            </div>
+            <ul
+              tabindex="0"
+              class="select-box__container"
+              id="selectContainerSun"
+              onblur="toggleOptions('Sun')"
+            >
+              <li
+                class="select-box__option"
+                onclick="selected('no', 'Sun', 'No sunlight')"
+              >
+                No sunlight
+              </li>
+              <li
+                class="select-box__option"
+                onclick="selected('low', 'Sun', 'Low sunlight')"
+              >
+                Low sunlight
+              </li>
+              <li
+                class="select-box__option"
+                onclick="selected('high', 'Sun', 'High sunlight')"
+              >
+                High sunlight
+              </li>
+            </ul>
+          </div>
+          <!-- .select-box -->
+        </div>
+        <!-- .filter__field -->
+        <div class="filter__field">
+          <img
+            class="filter__icon"
+            src="./images/illustrations/wateringcan.png"
+            alt="Illustration of Watering Can"
+            width="103px"
+            height="75px"
+          />
+          <label class="filter__label" for="water">
+            <strong>2.</strong> How often do you want to<br /><strong>water</strong> your plant?
+          </label>
+          
+          <div class="select-box">
+            <input
+              name="water"
+              type="hidden"
+              id="selectedValueWater"
+              value="null"
+            />
+            <div
+              class="select-box__value"
+              id="displayValueWater"
+              onclick="toggleOptions('Water')"
+            >
+              <span class="select-box__value-text" id="valueTextWater">Select...</span>
+              <span class="select-box__arrow" id="arrowControlWater"></span>
+            </div>
+            <ul
+              tabindex="0"
+              class="select-box__container"
+              id="selectContainerWater"
+              onblur="toggleOptions('Water')"
+            >
+              <li
+                class="select-box__option"
+                onclick="selected('rarely', 'Water', 'Rarely')"
+              >
+                Rarely
+              </li>
+              <li
+                class="select-box__option"
+                onclick="selected('regularly', 'Water', 'Regularly')"
+              >
+                Regularly
+              </li>
+              <li
+                class="select-box__option"
+                onclick="selected('daily', 'Water', 'Daily')"
+              >
+                Daily
+              </li>
+            </ul>
+          </div>
+          <!-- .select-box -->
+        </div>
+        <!-- .filter__field -->
+        <div class="filter__field">
+          <img
+            class="filter__icon"
+            src="./images/illustrations/dog.png"
+            alt="Illustration of Dog"
+            width="75px"
+            height="62px"
+          />
+          <label class="filter__label" for="pets">
+            <strong>3.</strong> Do you have pets? Do<br />they <strong>chew</strong> plants?
+          </label>
+
+          <div class="select-box">
+            <input name="pets" type="hidden" id="selectedValuePets" value="null" />
+            <div
+              class="select-box__value"
+              id="displayValuePets"
+              onclick="toggleOptions('Pets')"
+            >
+              <span class="select-box__value-text" id="valueTextPets">Select...</span>
+              <span class="select-box__arrow" id="arrowControlPets"></span>
+            </div>
+            <ul
+              tabindex="0"
+              class="select-box__container"
+              id="selectContainerPets"
+              onblur="toggleOptions('Pets')"
+            >
+              <li
+                class="select-box__option"
+                onclick="selected('false', 'Pets', 'No/They don’t care')"
+              >
+                No/They don’t care
+              </li>
+              <li
+                class="select-box__option"
+                onclick="selected('true', 'Pets', 'Yes')"
+              >
+                Yes
+              </li>
+            </ul>
+          </div>
+          <!-- .select-box -->          
+        </div>
+        <!-- .filter__field -->
+      </div>
+      <!-- .filter__content -->
+    </section>
+    <!-- .filter -->
+
+    <section class="no-results">
+      <div class="no-results__content">
+        <h2 class="no-results__title">No results yet…</h2>
+        <p class="no-results__description">
+          Use the filters above to find the plant that best fits your environment :)
+        </p>
+      </div>
+      <!-- .no-results__content -->
+    </section>
+    <!-- .no-results -->
+
+    <section class="results">
+      <div class="results__content">
+        <img class="results__illustration" src="./images/illustrations/pick.png" alt="Picks">
+        <h2 class="results__title">Our picks for you</h2>
+
+        <div class="results__wrapper">
+          <ul id="plants">
+            <li class="plants__card">
+              <span class="plants__card-badge">✨ Staff favorite</span>
+              <img class="plants__card-image" src="./images/plants/bunny-ears-cacti.jpg" alt="">
+              <div class="plants__card-content">
+                <h3 class="plands__card-title">Bunny ears cacti</h3>
+                <div class="plants__card-infos">
+                  <span class="plants__card-price">$25</span>
+                  <span class="plants__card-icons">
+                    <img src="./images/icons/pet.svg" alt="">
+                    <img src="./images/icons/low-sun.svg" alt="">
+                    <img src="./images/icons/1-drop.svg" alt="">
+                  </span>
+                </div>
+                <!-- .plants__card-infos -->
+              </div>
+              <!-- .plants__card-content -->
+            </li>
+          </ul>
+        </div>
+        <!-- .results__wrapper -->
+
+        <button class="main-button" onclick="scrollToElement('.hero')">
+          <img src="./images/icons/arrow-up.svg" alt="Go to top" />
+          back to the top
+        </button>
+      </div>
+      <!-- .results__content -->
+    </section>
+    <!-- .results -->
+
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/components/dropdown.js"></script>
+  </body>
+</html>

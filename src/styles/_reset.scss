@@ -13,7 +13,10 @@ body {
   height: 100%;
 }
 body {
+  font-family: "Montserrat", sans-serif;
   font-size: 1.4rem;
+  color: $text-color;
+  background-color: $bg-color;
 }
 a {
   text-decoration: none;
@@ -33,4 +36,23 @@ textarea {
 }
 img {
   display: block;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+
+  @media (min-width: $breakpoint-sm) {
+    max-width: 540px;
+  }
+  @media (min-width: $breakpoint-md) {
+    max-width: 720px;
+  }
+  @media (min-width: $breakpoint-lg) {
+    max-width: 900px;
+  }
+}
+
+.hidden {
+  display: none !important;
 }

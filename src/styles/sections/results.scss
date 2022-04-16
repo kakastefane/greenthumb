@@ -1,0 +1,50 @@
+.results {
+  padding: 3.5rem 3.5rem 7.5rem 3.5rem;
+
+  &__content {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  &__illustration {
+    width: 146px;
+    height: 72px;
+    margin-bottom: 1.6rem;
+  }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 4.9rem;
+    color: $title-color-dark;
+    margin-bottom: 1.6rem;
+  }
+
+  &__wrapper {
+    margin-bottom: 4rem;
+  }
+}
+
+.plants {
+  @include flexContainer(row, unset, unset);
+
+  &__card {
+    @include flexContainer(column, flex-end, center);
+    position: relative;
+    width: 100%;
+    max-width: 260px;
+    padding: 2rem;
+    background-color: $bg-color-light;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  &__card-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
